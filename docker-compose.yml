@@ -1,7 +1,7 @@
 version: '3.2'
 services:
   db:
-    image: alexanderfefelov/postgrespro-1c
+    image: voidzster/postgrespro-1c
     restart: always
     ports:
       - "5432:5432"
