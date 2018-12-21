@@ -10,7 +10,7 @@ services:
      - ./BACKUPS:/tmp/backups
      - /etc/localtime:/etc/localtime:ro
     environment:
-      POSTGRES_PASSWORD: 123qweRTY
+      POSTGRES_PASSWORD: password123
 
   pgadmin:
     image: dpage/pgadmin4
@@ -18,8 +18,8 @@ services:
     ports:
       - "8888:80"
     environment:
-      - PGADMIN_DEFAULT_EMAIL=pgadmin@darlok.net
-      - PGADMIN_DEFAULT_PASSWORD=123qweRTY
+      - PGADMIN_DEFAULT_EMAIL=user@mail.com
+      - PGADMIN_DEFAULT_PASSWORD=password123
     links: 
       - db
 
