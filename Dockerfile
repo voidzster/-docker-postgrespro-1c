@@ -17,7 +17,7 @@ RUN apt-get -qq update \
 RUN localedef --inputfile ru_RU --force --charmap UTF-8 --alias-file /usr/share/locale/locale.alias ru_RU.UTF-8
 ENV LANG ru_RU.utf8
 
-ENV SERVER_VERSION 9.4
+ENV SERVER_VERSION 9.6
 ENV PATH /usr/lib/postgresql/$SERVER_VERSION/bin:$PATH
 ENV PGDATA /data
 RUN echo deb http://1c.postgrespro.ru/deb/ xenial main > /etc/apt/sources.list.d/postgrespro-1c.list \
