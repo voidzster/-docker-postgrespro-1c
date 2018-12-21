@@ -1,0 +1,26 @@
+version: '3.2'
+services:
+  db:
+    image: alexanderfefelov/postgrespro-1c
+    restart: always
+    ports:
+      - "5432:5432"
+    volumes: 
+     - ./DATA/pgdata:/data
+     - ./BACKUPS:/tmp/backups
+     - /etc/localtime:/etc/localtime:ro
+    environment:
+      POSTGRES_PASSWORD: 123qweRTY
+
+  pgadmin:
+    image: dpage/pgadmin4
+    restart: always
+    ports:
+      - "8888:80"
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=pgadmin@darlok.net
+      - PGADMIN_DEFAULT_PASSWORD=123qweRTY
+    links: 
+      - db
+
+
