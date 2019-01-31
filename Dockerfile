@@ -7,7 +7,7 @@ RUN groupadd postgres --gid=999 \
 
 ENV GOSU_VERSION 1.7
 RUN apt-get -qq update \
-  && apt-get -qq install --yes --no-install-recommends ca-certificates wget locales \
+  && apt-get -qq install --yes --no-install-recommends ca-certificates wget locales pigz \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/* \
   && wget --quiet -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture)" \
